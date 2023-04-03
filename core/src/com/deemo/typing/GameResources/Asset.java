@@ -29,7 +29,14 @@ public class Asset {
 
     public static String[] loadText(String file){
         FileHandle internal = Gdx.files.internal(text + file);
-        return WordCollector.collectWord(internal.readString());
+        FileHandle internalWithJar = Gdx.files.internal("..\\resources\\main\\text\\" + file);
+        String[] strings;
+        try{
+            strings = WordCollector.collectWord(internal.readString());
+        }catch (Exception e){
+            strings = WordCollector.collectWord(internalWithJar.readString());
+        }
+        return strings;
     }
 
     //加载图片、文本、音乐资源
