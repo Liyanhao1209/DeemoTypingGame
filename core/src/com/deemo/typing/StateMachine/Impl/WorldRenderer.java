@@ -10,8 +10,7 @@ import com.deemo.typing.Util.WordKey;
 
 import java.text.DecimalFormat;
 
-import static com.deemo.typing.GameScreens.SuperClass.GeneralScreen.ScreenHeight;
-import static com.deemo.typing.GameScreens.SuperClass.GeneralScreen.ScreenWidth;
+import static com.deemo.typing.GameScreens.SuperClass.GeneralScreen.*;
 
 public class WorldRenderer implements WorldEventRenderer {
     private World world;
@@ -31,10 +30,19 @@ public class WorldRenderer implements WorldEventRenderer {
         batch.enableBlending();
         batch.begin();
         renderBackGround();
+        renderLineSymbols();
         renderKeys();
         renderScore();
         renderNumber();
         batch.end();
+    }
+
+    private void renderLineSymbols() {
+        int queueStart = (ScreenWidth - topLineWidth) / 2;
+        //上方的标记
+        batch.draw(GameScreenTextures.TopLineSymbol,queueStart+(World.currentQueue-1)*topLineWidth/4,945,topLineWidth/4,20);
+        //下方的标记
+        batch.draw(GameScreenTextures.BottomLineSymbol,(World.currentQueue-1)*ScreenWidth/4,185,ScreenWidth/4,30);
     }
 
     private void renderBackGround(){

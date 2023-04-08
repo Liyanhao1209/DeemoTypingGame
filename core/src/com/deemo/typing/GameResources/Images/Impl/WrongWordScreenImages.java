@@ -19,7 +19,7 @@ public class WrongWordScreenImages extends Images {
         previousPage = DrawAndSetBounds(Asset.icon+"return.png",96,96,96,96);
         AddPreviousPageListener(previousPage,game);
         //最后一页没有去下一页的按钮
-        nextPage = DrawAndSetBounds(Asset.icon+"return.png",ScreenWidth-96-96,96,96,96);
+        nextPage = DrawAndSetBounds(Asset.icon+"goAhead.png",ScreenWidth-96-96,96,96,96);
         AddNextPageListener(nextPage,game);
 
     }

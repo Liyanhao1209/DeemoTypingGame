@@ -16,6 +16,8 @@ public class GameScreenTextures {
     public static Texture Retry;
     public static Texture Songs;
     public static Texture Home;
+    public static Texture BottomLineSymbol;
+    public static Texture TopLineSymbol;
 
     public static  void load(){
         YellowKey = new Texture(pic+"YellowKey.png");
@@ -25,6 +27,8 @@ public class GameScreenTextures {
         Retry = new Texture(Asset.icon+"Retry.png");
         Songs = new Texture(Asset.icon+"Songs.png");
         Home = new Texture(Asset.icon+"Home.png");
+        BottomLineSymbol = new Texture(pic+"BottomLineSymbol.png");
+        TopLineSymbol = new Texture(pic+"TopLineSymbol.png");
     }
 
     public static void draw(){
